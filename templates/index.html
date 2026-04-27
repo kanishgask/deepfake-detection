@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deepfake Detector</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',
+filename='style.css')}}">
+</head>
+
+<body>
+
+<h1>Deepfake Detection System</h1>
+
+<form
+action="/predict"
+method="post"
+enctype="multipart/form-data"
+>
+
+<input type="file"
+name="video">
+
+<button type="submit">
+Detect
+</button>
+
+</form>
+
+{% if prediction %}
+<h2>{{prediction}}</h2>
+{% endif %}
+
+</body>
+</html>
